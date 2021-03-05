@@ -8,16 +8,31 @@ using System.Text;
 
 // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de interfaz "IService1" en el código y en el archivo de configuración a la vez.
 [ServiceContract]
-public interface IService
+public interface IWSPersonas
 {
-
 	[OperationContract]
-	string GetData(int value);
+    Persona ObtenerPersona(string Identificacion);
+}
 
-	[OperationContract]
-	CompositeType GetDataUsingDataContract(CompositeType composite);
+[DataContract]
+public class Persona : BaseRespuesta
+{
+    [DataMember]
+	public string Nombre { get; set; }
+	
+	[DataMember]
+	public int Edad { get; set; }
 
-	// TODO: agregue aquí sus operaciones de servicio
+    public string Secreto { get; set; }
+}
+
+[DataContract]
+public class BaseRespuesta
+{
+	[DataMember]
+    public string MensajeRespuesta { get; set; }
+	[DataMember]
+	public string Error { get; set; }
 }
 
 // Utilice un contrato de datos, como se ilustra en el ejemplo siguiente, para agregar tipos compuestos a las operaciones de servicio.

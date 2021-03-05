@@ -25,13 +25,25 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "wcfServiceTest", "wcfServic
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClienteWS", "ClienteWS\ClienteWS.csproj", "{FEF35D7E-B91A-468B-8D87-5E23480A1A87}"
+	ProjectSection(ProjectDependencies) = postProject
+		{11D1BD6B-8900-4073-BC96-4C62B9DD36C1} = {11D1BD6B-8900-4073-BC96-4C62B9DD36C1}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{11D1BD6B-8900-4073-BC96-4C62B9DD36C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{11D1BD6B-8900-4073-BC96-4C62B9DD36C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11D1BD6B-8900-4073-BC96-4C62B9DD36C1}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{11D1BD6B-8900-4073-BC96-4C62B9DD36C1}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{FEF35D7E-B91A-468B-8D87-5E23480A1A87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEF35D7E-B91A-468B-8D87-5E23480A1A87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEF35D7E-B91A-468B-8D87-5E23480A1A87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEF35D7E-B91A-468B-8D87-5E23480A1A87}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
