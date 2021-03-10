@@ -11,19 +11,32 @@ using System.Text;
 public interface IWSPersonas
 {
 	[OperationContract]
-    Persona ObtenerPersona(string Identificacion);
+	Persona ObtenerPersona(string Identificacion);
+
+	[OperationContract]
+	string ObtDatosPersonaStr(Persona p);
 }
 
 [DataContract]
 public class Persona : BaseRespuesta
 {
-    [DataMember]
+	[DataMember]
 	public string Nombre { get; set; }
-	
+
 	[DataMember]
 	public int Edad { get; set; }
 
-    public string Secreto { get; set; }
+	public string Secreto { get; set; }
+
+	/* 
+	 * public override string ToString()
+    {
+		string res;
+
+		res = "[" + this.Edad.ToString() + " - " + this.Nombre + "]";
+		return res;
+    }
+	*/
 }
 
 [DataContract]

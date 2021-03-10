@@ -123,6 +123,12 @@ namespace ClienteWS.WSPersonas {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSPersonas/ObtenerPersona", ReplyAction="http://tempuri.org/IWSPersonas/ObtenerPersonaResponse")]
         System.Threading.Tasks.Task<ClienteWS.WSPersonas.Persona> ObtenerPersonaAsync(string Identificacion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSPersonas/ObtDatosPersonaStr", ReplyAction="http://tempuri.org/IWSPersonas/ObtDatosPersonaStrResponse")]
+        string ObtDatosPersonaStr(ClienteWS.WSPersonas.Persona p);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSPersonas/ObtDatosPersonaStr", ReplyAction="http://tempuri.org/IWSPersonas/ObtDatosPersonaStrResponse")]
+        System.Threading.Tasks.Task<string> ObtDatosPersonaStrAsync(ClienteWS.WSPersonas.Persona p);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -158,6 +164,14 @@ namespace ClienteWS.WSPersonas {
         
         public System.Threading.Tasks.Task<ClienteWS.WSPersonas.Persona> ObtenerPersonaAsync(string Identificacion) {
             return base.Channel.ObtenerPersonaAsync(Identificacion);
+        }
+        
+        public string ObtDatosPersonaStr(ClienteWS.WSPersonas.Persona p) {
+            return base.Channel.ObtDatosPersonaStr(p);
+        }
+        
+        public System.Threading.Tasks.Task<string> ObtDatosPersonaStrAsync(ClienteWS.WSPersonas.Persona p) {
+            return base.Channel.ObtDatosPersonaStrAsync(p);
         }
     }
 }

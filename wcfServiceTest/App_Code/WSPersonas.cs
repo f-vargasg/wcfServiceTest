@@ -9,19 +9,37 @@ using System.Text;
 // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Service1" en el código, en svc y en el archivo de configuración.
 public class WSPersonas : IWSPersonas
 {
+    public string ObtDatosPersonaStr(Persona p)
+    {
+        string res = string.Empty;
+
+        try
+        {
+            
+            res = "[" +  (p.Error.Length <= 0 ? "Nombre: " + p.Nombre + " Edad: " +  p.Edad.ToString()  :
+                                                "Error: " + p.Error)  + "]";
+            return res;
+        }
+        catch (Exception)
+        {
+            throw;
+        }
+    }
+
     public Persona ObtenerPersona(string Identificacion)
     {
+       
         if (Identificacion == "0")
         {
-            return new Persona() { Nombre = "Nombre0", Edad = 99 };
+            return new Persona() { Nombre = "Nombre0", Edad = 99, Error = string.Empty};
         }
         else if (Identificacion == "1")
         {
-            return new Persona() { Nombre = "Nombre1", Edad = 24 };
+            return new Persona() { Nombre = "Nombre1", Edad = 24, Error = string.Empty };
         }
         else if (Identificacion == "2")
         {
-            return new Persona() { Nombre = "Nombre2", Edad = 44 };
+            return new Persona() { Nombre = "Nombre2", Edad = 44, Error = string.Empty };
         }
         else   {
             return new Persona() { Error = "Persona no encontrada" };

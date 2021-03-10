@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClienteWS.WSPersonas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,12 +21,25 @@ namespace ClienteWS
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             var identificacion = txtIdentificacion.Text;
-
-            using (WSPersonas.WSPersonasClient client  = new WSPersonas.WSPersonasClient())
+            try
             {
-                var persona = client.ObtenerPersona(identificacion);
-                var nombre = persona.Nombre;
+                using (WSPersonasClient client = new WSPersonas.WSPersonasClient())
+                {
+                    var persona = client.ObtenerPersona(identificacion);
+                    var nombre = persona.Nombre;
+
+                    Console.WriteLine(persona.Nombre);
+                    Console.WriteLine(persona.Edad);
+                    Console.WriteLine(persona.Error);
+                    MessageBox.Show(client.ObtDatosPersonaStr(persona));
+
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
 
         }
     }
