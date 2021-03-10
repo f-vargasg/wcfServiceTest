@@ -9,7 +9,7 @@ using System.ServiceModel.Web;
 using System.Text;
 
 // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Service1" en el código, en svc y en el archivo de configuración.
-public class WSPersonas  : ServiceBase, IWSPersonas
+public class WSPersonas  : IWSPersonas
 {
 
     private readonly ILog log;
@@ -25,7 +25,8 @@ public class WSPersonas  : ServiceBase, IWSPersonas
 
         try
         {
-            
+
+            this.log.Debug("[ObtenerDAtosPersona]");
             res = "[" +  (p.Error.Length <= 0 ? "Nombre: " + p.Nombre + " Edad: " +  p.Edad.ToString()  :
                                                 "Error: " + p.Error)  + "]";
             return res;
@@ -38,7 +39,8 @@ public class WSPersonas  : ServiceBase, IWSPersonas
 
     public Persona ObtenerPersona(string Identificacion)
     {
-       
+
+        this.log.Debug("[ObtenerPersona]");
         if (Identificacion == "0")
         {
             return new Persona() { Nombre = "Nombre0", Edad = 99, Error = string.Empty};
