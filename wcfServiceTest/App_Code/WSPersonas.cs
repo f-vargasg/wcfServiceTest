@@ -1,4 +1,6 @@
-﻿using System;
+﻿using log4net;
+using log4net.Config;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -7,8 +9,16 @@ using System.ServiceModel.Web;
 using System.Text;
 
 // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Service1" en el código, en svc y en el archivo de configuración.
-public class WSPersonas : IWSPersonas
+public class WSPersonas  : ServiceBase, IWSPersonas
 {
+
+    private readonly ILog log;
+    public WSPersonas() : base()
+    {
+        XmlConfigurator.Configure();
+        this.log = LogManager.GetLogger(typeof(WSPersonas));
+        this.log.Debug("Creando WSPersonas...");
+    }
     public string ObtDatosPersonaStr(Persona p)
     {
         string res = string.Empty;
