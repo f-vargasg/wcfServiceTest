@@ -19,7 +19,7 @@ public class ServiceBase
         //Get logger
         log = LogManager.GetLogger(typeof(ServiceBase));
         //Start logging
-        log.Debug("Service Base ");
+        log.Debug("Service Base");
 
     }
 }

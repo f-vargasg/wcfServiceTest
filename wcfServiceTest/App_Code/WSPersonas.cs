@@ -9,7 +9,7 @@ using System.ServiceModel.Web;
 using System.Text;
 
 // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Service1" en el código, en svc y en el archivo de configuración.
-public class WSPersonas  : IWSPersonas
+public class WSPersonas : IWSPersonas
 {
 
     private readonly ILog log;
